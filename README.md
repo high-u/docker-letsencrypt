@@ -4,8 +4,8 @@
 
 ```
 sudo docker network create hogenet
-sudo docker-compose -f docker-compose.proxy.yaml up -d
-sudo docker-compose -f app/docker-compose.nodered.yaml up -d
+sudo docker-compose -f docker-compose_proxy.yaml up -d
+sudo docker-compose -f docker-compose_nodered.yaml up -d
 ```
 
 ## Note
