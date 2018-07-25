@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+  node-red:
+    image: 'nodered/node-red-docker:latest'
+    networks:
+      - 'hogenet'
+    container_name: 'node-red'
+    ports:
+      - '1880:1880'
+    restart: 'always'
+    environment:
+      - 'VIRTUAL_HOST=example.com'
+      - 'VIRTUAL_PORT=1880'
+      - 'LETSENCRYPT_HOST=example.com'
+      - 'LETSENCRYPT_EMAIL=ssl@example.com'
+      - 'LETSENCRYPT_TEST=false'
+
+networks:
+  hogenet:
+    external:
+      name: 'hogenet'
